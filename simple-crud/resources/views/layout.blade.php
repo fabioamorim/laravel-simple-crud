@@ -23,7 +23,7 @@
         <a class="nav-link" href="#">Users<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Register user</a>
+        <a class="nav-link" href="/user/add">Register user</a>
       </li>
     </ul>
   </div>

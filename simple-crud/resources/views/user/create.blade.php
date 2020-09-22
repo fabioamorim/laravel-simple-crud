@@ -8,9 +8,10 @@
     <aside class="col-sm-8 col centered">
         <div class="card card-register">
             <article class="card-body"> 
-                <form id="formulario"  method="POST" action="#">
-                    <div class="col-sm-12 form-group">                       
-                        <input name="nome" class="form-control" type="text"  placeholder="Name"><br>
+                <form id="formulario"  method="POST" action="/user/add">
+                    <div class="col-sm-12 form-group"> 
+                        @csrf                      
+                        <input name="name" class="form-control" type="text"  placeholder="Name"><br>
                         <input name="cpf" class="form-control  input" type="text" placeholder="Cpf"><br>
                         <input name="email" class="form-control  input" type="text" placeholder="E-mail"><br>
                         <input name="phone_number" class="form-control  input" type="text"  placeholder="Phone Number"><br>
