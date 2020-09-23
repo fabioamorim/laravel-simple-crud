@@ -2,21 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use App\Users;
+
 class UsersController extends Controller
 {
-    function index() 
+    function index(Request $request) 
     {
-        return "The principal page.";
+
+        $message = $request->session()->get('message');
+
+        return view('user.index', ['message' => $message]);
     }
 
     function create()
     {
-        return "Show the create user form.";
+        return view('user.create');
     }
 
-    function store()
+    function store(Request $request)
     {
-        return "Save on database.";
+        $user = Users::create($request->all());
+
+        $request->session()->flash('message', "The user was created with success!");
+
+        return redirect('/user');
     }
 
     function destroy()
