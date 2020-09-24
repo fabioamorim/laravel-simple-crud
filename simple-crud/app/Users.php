@@ -11,6 +11,7 @@ class Users extends Model
     protected $fillable = [
         'name',
         'cpf',
-        'email'
+        'email',
+        'phone_number'
     ];
 }

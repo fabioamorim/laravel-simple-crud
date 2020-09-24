@@ -18,6 +18,7 @@ class CreateUser extends Migration
             $table->string('name');
             $table->string('cpf');
             $table->string('email');
+            $table->string('phone_number');
             $table->date('created_at');
             $table->date('updated_at');
             // $table->timestamps();
