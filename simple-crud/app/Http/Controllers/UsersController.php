@@ -9,10 +9,12 @@ class UsersController extends Controller
 {
     function index(Request $request) 
     {
+        $users = Users::query()
+            ->orderBy('name')->get();
 
         $message = $request->session()->get('message');
 
-        return view('user.index', ['message' => $message]);
+        return view('user.index', ['users' => $users, 'message' => $message]);
     }
 
     function create()
