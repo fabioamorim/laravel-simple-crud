@@ -16,7 +16,7 @@
                         <input name="email" class="form-control  input" type="text" placeholder="E-mail"><br>
                         <input name="phone_number" class="form-control  input" type="text"  placeholder="Phone Number"><br>
                         <button type="submit" id="btn-login" class="btn btn-outline-secondary btn-block btn-sm"> Save  </button>
-                        <a class="btn btn-outline-secondary btn-block btn-sm" href="../../">Calcel</a>
+                        <a class="btn btn-outline-secondary btn-block btn-sm" href="/user">Calcel</a>
                     </div> <!-- form-group// -->
                 </form>
             </article>
