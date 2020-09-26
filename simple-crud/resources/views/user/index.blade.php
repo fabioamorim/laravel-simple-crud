@@ -34,8 +34,8 @@
               <td>{{ $user->cpf }}</td>
               <td>{{ $user->email }}</td>
               <td>{{ $user->phone_number }}</td>
-              <td>{{ $user->created_at }}</td>
-              <td>{{ $user->updated_at }}</td>
+              <td>{{ \Carbon\Carbon::parse($user->created_at)->format('d/m/Y')}}</td>
+              <td>{{ \Carbon\Carbon::parse($user->updated_at)->format('d/m/Y')}}</td>
               <td>
                   <form action="{{ route('user_destroy',$user->id) }}" method="post">
                     <a href="/user/update/{{ $user->id }}" class="btn btn-outline-secondary btn-sm">atualizar</a>
