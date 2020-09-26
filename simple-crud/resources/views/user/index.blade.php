@@ -10,9 +10,11 @@
             </button>
         </div>  
     @endif
-    <h2 class="text text-center mt-5">Users</h2>
     
-    @if ($users)
+    
+    @if (sizeof($users) > 0)
+
+     <h2 class="text text-center mt-5">Users</h2>
      <table class="table table-sm">
         <thead>
           <tr>
@@ -32,18 +34,24 @@
               <td>{{ $user->cpf }}</td>
               <td>{{ $user->email }}</td>
               <td>{{ $user->phone_number }}</td>
-              <td>20/02/2020</td>
-              <td>15/03/2020</td>
+              <td>{{ $user->created_at }}</td>
+              <td>{{ $user->updated_at }}</td>
               <td>
-                  <a href="#" class="btn btn-outline-secondary btn-sm">deletar</a>
-                  <a href="#" class="btn btn-outline-secondary btn-sm">atualizar</a>
+                  <form action="{{ route('user_destroy',$user->id) }}" method="post">
+                    <a href="/user/update/{{ $user->id }}" class="btn btn-outline-secondary btn-sm">atualizar</a>
+                    <button type="submit" class="btn btn-outline-secondary btn-sm">delete</button>
+                    @csrf
+                    @method('DELETE')
+                  </form>
+              
               </td>
             </tr>
           @endforeach
         </tbody>
         
       </table>
-
+    @else
+      <p class='text text-center mt-5'>We don't have user in database, please register new user =) <a href="/user/create">here</a>.</p>
     @endif
     
 @endsection
