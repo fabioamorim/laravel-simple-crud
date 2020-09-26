@@ -38,7 +38,7 @@
               <td>{{ \Carbon\Carbon::parse($user->updated_at)->format('d/m/Y')}}</td>
               <td>
                   <form action="{{ route('user_destroy',$user->id) }}" method="post">
-                    <a href="/user/update/{{ $user->id }}" class="btn btn-outline-secondary btn-sm">atualizar</a>
+                    <a href="/user/update/{{ $user->id }}" class="btn btn-outline-secondary btn-sm">update</a>
                     <button type="submit" class="btn btn-outline-secondary btn-sm">delete</button>
                     @csrf
                     @method('DELETE')
