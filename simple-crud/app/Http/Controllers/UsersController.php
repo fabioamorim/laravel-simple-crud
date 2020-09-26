@@ -42,7 +42,7 @@ class UsersController extends Controller
         return view('user.update', ['user'=> $user]);
     }
 
-    function refresh(Request $request)
+    function refresh(UsersFormRequest $request)
     {
         
         $user = Users::find($request->id);
