@@ -25,9 +25,9 @@ class UsersFormRequest extends FormRequest
    {
        return [
            'name' => 'required|min:3',
-           'cpf' => 'required',
-           'email' => 'required',
-           'phone_number' => 'required'
+           'cpf' => 'required|size:14|regex:/[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}/',
+           'email' => 'required|email',
+           'phone_number' => 'required|regex:/(^(\([0-9]{2}\))\s([9]{1})?([0-9]{4})-([0-9]{4})$)/'
        ];
    }
 
