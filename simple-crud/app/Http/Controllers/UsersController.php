@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Users;
+use App\Http\Requests\UsersFormRequest;
 
 class UsersController extends Controller
 {
@@ -22,13 +23,14 @@ class UsersController extends Controller
         return view('user.create');
     }
 
-    function store(Request $request)
+    function store(UsersFormRequest $request)
     {
-        $user = Users::create($request->all());
 
-        $request->session()->flash('message', "The user was created with success!");
+         $user = Users::create($request->all());
 
-        return redirect('/user');
+         $request->session()->flash('message', "The user was created with success!");
+
+        return redirect()->route('users_list');
     }
 
     function update(Request $request)
