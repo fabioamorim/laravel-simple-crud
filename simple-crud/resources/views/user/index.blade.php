@@ -10,9 +10,11 @@
             </button>
         </div>  
     @endif
-    <h2 class="text text-center mt-5">Users</h2>
     
-    @if ($users)
+    
+    @if (sizeof($users) > 0)
+
+     <h2 class="text text-center mt-5">Users</h2>
      <table class="table table-sm">
         <thead>
           <tr>
@@ -48,7 +50,8 @@
         </tbody>
         
       </table>
-
+    @else
+      <p class='text text-center mt-5'>We don't have user in database, please register new user =) <a href="/user/create">here</a>.</p>
     @endif
     
 @endsection
