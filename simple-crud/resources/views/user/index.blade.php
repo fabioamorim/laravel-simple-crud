@@ -13,10 +13,10 @@
 
   <div class="col-md-8 centered search">
     <div class="form-group">
-      <form method="post" action="{{ route('user_teste')}}">
+      <form method="post" action="{{ route('user_search')}}">
         @csrf  
         <div class="input-group mb-3">
-          <input type="text" class="form-control" name="name" id="name" placeholder="Search the user here ..." aria-label="Search the user here ..." aria-describedby="basic-addon2">
+          <input type="text" class="form-control" name="name" id="name" placeholder="Search the user here ..." autofocus = "true" aria-label="Search the user here ..." aria-describedby="basic-addon2">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" type="submit">Search</button>
           </div>

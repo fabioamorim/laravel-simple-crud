@@ -10,10 +10,12 @@ class UsersController extends Controller
 {
     function index(Request $request) 
     {
-        $users = Users::query()
-            ->orderBy('name')->get();
+    //    $users = Users::query()
+    //       ->orderBy('name')->get();
 
         $message = $request->session()->get('message');
+
+        $users = $request->session()->get('user');
 
         return view('user.index', ['users' => $users, 'message' => $message]);
     }
@@ -64,6 +66,15 @@ class UsersController extends Controller
         Users::destroy($request->id);
 
         $request->session()->flash('message', "The user was deleted with success!");
+
+        return redirect('/user');
+    }
+
+    function search(Request $request){
+
+        $user = Users::where('name', 'like', '%'.$request->name.'%')->get();
+
+        $request->session()->flash('user', $user);
 
         return redirect('/user');
     }

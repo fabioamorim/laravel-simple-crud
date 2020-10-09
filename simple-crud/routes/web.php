@@ -15,5 +15,5 @@ Route::put('/user/update', 'UsersController@refresh');
 Route::delete('/user/{id}', 'UsersController@destroy')
         ->name('user_destroy');
 
-Route::post('/user/teste', 'UsersController@teste')
-        ->name('user_teste');
+Route::post('/user', 'UsersController@search')
+        ->name('user_search');
